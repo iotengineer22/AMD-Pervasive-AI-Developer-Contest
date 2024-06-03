@@ -372,7 +372,7 @@ else:
     print("The camera opened successfully.")
 
 # Display True/False
-display=False
+display=True
 
 # LED(GPIO)_set
 gpio_0_ip = ol.ip_dict['axi_gpio_0']
