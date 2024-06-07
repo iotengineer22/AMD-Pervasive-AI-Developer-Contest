@@ -1,0 +1,35 @@
+,,,,,
+,,,,,
+Description,Component        ,URL(reference),Qty,Unit Price ($),Price ($)
+360°　Camera,Ricoh Theta V,https://www.amazon.com/Ricoh-910725-Theta-V/dp/B074ZB7PZM/,1,370.86,370.86
+Bolt to fix the 360° Camera,"1/4-20 x 3""",https://www.amazon.com/4-20x3-Stainless-Washers-Threaded-Fullerkreg/,1,1,1
+,,,,,
+Robot Main-Flame(including Motor),Tamiya 70162 RC Robot Construction Set (Tire Type),https://www.amazon.com/Tamiya-70162-Robot-Construction-Tire/dp/B002DR3HAI/,1,48.04,48.04
+Robot Car-Gearbox(including Motor),Tamiya 70168 Double Gearbox,https://www.amazon.com/Tamiya-70168-Independent-Double-Gearbox/dp/B001Q13BIU/,1,14.5,14.5
+Robot Car-Add-plate,Tamiya 70098 Universal Plate,https://www.amazon.com/HRP-70098-000-Tamiya-70098-Universal/dp/B001VZHRU4/,5,10.77,53.85
+Robot Car-Add-Tires,Tamiya 70096 Off-Road Tires (1),https://www.amazon.com/Tamiya-70096-Off-Road-Tires-1/dp/B001VZL5IO/,3,4,12
+※Most of the necessary small screws and nuts are included in the Tamiya set,,,,,
+,,,,,
+Motor-Driver-PCB,Original-PCB,https://github.com/iotengineer22/PCB-DRV8833-TEST,2,5,10
+Motor-Driver-IC(U1),DRV8833PWPR,https://www.digikey.com/en/products/detail/texas-instruments/DRV8833PWPR/2743167?s=N4IgTCBcDaICICUBqAOFBmdAFA6lhIAugL5A,2,2.5,5
+Resistor_SMD(R1),0603_1608Metric_10k,https://www.amazon.com/Chanzon-Resistor-Tolerance-Resistors-Certificated/dp/B08RYNWTT9/,2,0.1,0.2
+Resistor_SMD(R2.R3),0603_1608Metric_0,https://www.amazon.com/Chanzon-Resistor-Tolerance-Resistors-Certificated/dp/B08RYNWTT9/,4,0.1,0.4
+Capacitor_SMD(C1),0603_1608Metric_2.2u,https://www.amazon.com/McIgIcM-36values20pcs-electronic-Multiplayer-Capacitors/dp/B06XDG3WQX/,2,0.1,0.2
+Capacitor_SMD(C2),0603_1608Metric_10u,https://www.amazon.com/McIgIcM-36values20pcs-electronic-Multiplayer-Capacitors/dp/B06XDG3WQX/,2,0.1,0.2
+Capacitor_SMD(C3),0603_1608Metric_0.1u,https://www.amazon.com/McIgIcM-36values20pcs-electronic-Multiplayer-Capacitors/dp/B06XDG3WQX/,2,0.1,0.2
+PinHeader_2x06(J1),2x06_P2.54mm_Horizontal,https://www.amazon.com/Uxcell-a15010500ux0918-2-54mm-20-pin-Double/dp/B00W8TSWXS/,2,0.5,1
+"PinHeader_1x02(J2,J3,J4)",1x02_P2.54mm_Vertical,https://www.amazon.com/DBParts-20pcs-Terminal-Connector-2-54mm/dp/B07NSJV6NW/,6,1,6
+,,,,,
+Debug(LED/SW)-PCB,Original-PCB,https://github.com/iotengineer22/PCB-KV260-PMOD-TEST,1,5,5
+"Resistor_SMD(R1,R2,R3)",0603_1k,https://www.amazon.com/Chanzon-Resistor-Tolerance-Resistors-Certificated/dp/B08RYNWTT9/,3,0.1,0.3
+Resistor_SMD(R4),0603_10k,https://www.amazon.com/Chanzon-Resistor-Tolerance-Resistors-Certificated/dp/B08RYNWTT9/,1,0.1,0.1
+LED_THT:LED_D3.0mm(D1),Red_LED,https://www.amazon.com/Chanzon-100pcs-colors-Emitting-Assorted/dp/B01AUI4W5U/,1,0.1,0.1
+LED_THT:LED_D3.0mm(D2),Green_LED,https://www.amazon.com/Chanzon-100pcs-colors-Emitting-Assorted/dp/B01AUI4W5U/,1,0.1,0.1
+LED_THT:LED_D3.0mm(D3),Blue_LED,https://www.amazon.com/Chanzon-100pcs-colors-Emitting-Assorted/dp/B01AUI4W5U/,1,0.1,0.1
+PinHeader_2x06(J1),2x06_P2.54mm_Horizontal,https://www.amazon.com/Uxcell-a15010500ux0918-2-54mm-20-pin-Double/dp/B00W8TSWXS/,1,0.5,0.5
+,,,,,
+Motor and Power Wire,28AWG-wire-set,https://www.amazon.com/Fermerry-Silicone-Colors-Flexible-Electrical/dp/B089CQ1C8L/,1,10.49,10.49
+The screws and spacers for securing the KR260.,M3 Screw Nut Set,https://www.amazon.com/350PCS-M3-Female-Standoff-Assortment/dp/B0BXT71WJK/?th=1,1,8.99,8.99
+,,,,,
+,,,,,
+,,,,Total Cost,549.13
