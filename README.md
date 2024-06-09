@@ -6,13 +6,11 @@ This repository present solution for the AMD Pervasive AI Developer Contest.[AMD
 ## Introduction
 First of all thank you to AMD and hackster.io for hosting this exciting competition.
 
-The main project is primarily summarized on hackster.io, so please refer to it there **under submission**.
+The main project is primarily summarized on hackster.io, so please refer to it there **<< under submission**.
 
 This project integrates advanced technologies like Object Detection, DPU, PYNQ, and ROS2 with KR260.
 
 A key feature is the incorporation of a **360° Camera**.
-
-By leveraging the KR260, we've developed a robot with 360-degree AI vision.
 
 ![overview](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/overview.png)
 
@@ -34,5 +32,25 @@ The PL also handles PWM and GPIO for driving the Robot Car and Arm.
 By integrating PL and PS, the robot achieves 360-degree AI vision.
 
 ![Using KR260 and PYNQ](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/Using-KR260-and-PYNQ.png)
+
+This is Main electrical diagram.
+
+![Main-electrical-diagram](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/Main-electrical-diagram.png)
+
+
+### 1. PYNQ + GPIO(LED Blinking)
+For details and specifications, please refer to the Subproject below.
+
+[Control GPIO from PYNQ and KR260](https://www.hackster.io/iotengineer22/control-gpio-from-pynq-and-kr260-0d3613)
+
+![kr260-gpio](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-gpio.png)
+
+In this Subproject, we experimented with controlling GPIO on the KR260 FPGA board.
+
+Using Python (PYNQ) , we managed to perform LED output and switch input via the PMOD connector with custom-designed board.
+
+The test .bit .hwh .ipynb files are available on GitHub.
+
+[Control GPIO from PYNQ and KR260](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/pynq-gpio)
 
 
