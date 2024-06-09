@@ -1,8 +1,6 @@
 # AMD Pervasive AI Developer Contest
 This repository present solution for the AMD Pervasive AI Developer Contest.[AMD Pervasive AI Developer Contest](https://www.hackster.io/contests/amd2023).
 
-![ROS2 Marker Output](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/ros2-marker.gif)
-
 ## Introduction
 First of all thank you to AMD and hackster.io for hosting this exciting competition.
 
