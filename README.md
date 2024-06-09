@@ -41,6 +41,8 @@ For details and specifications, please refer to the hackster.io Subproject below
 
 [Control GPIO from PYNQ and KR260](https://www.hackster.io/iotengineer22/control-gpio-from-pynq-and-kr260-0d3613)
 
+![kr260-gpio](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-gpio.png)
+
 In this Subproject, we experimented with controlling GPIO on the KR260 FPGA board.
 
 Using Python (PYNQ) , we managed to perform LED output and switch input via the PMOD connector with custom-designed board.
