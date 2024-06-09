@@ -50,6 +50,7 @@ The test .bit .hwh .ipynb files are available on GitHub.
 [/jupyter_notebooks/pynq-gpio](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/pynq-gpio)
 
 
+
 ### 2. PYNQ + PWM(DC-Motor Control)
 For details and specifications, please refer to the hackster.io Subproject below.
 
@@ -64,6 +65,7 @@ The test .bit .hwh .ipynb files are available on GitHub.
 [/jupyter_notebooks/pynq-pwm](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/pynq-pwm)
 
 
+
 ### 3. Object Detection(Yolo) with DPU-PYNQ
 For details and specifications, please refer to the hackster.io Subproject below.
 
@@ -73,7 +75,7 @@ In this Subproject, We tested object detection on images from camera using the K
 
 Originally, there was a sample program for PYNQ-DPU, which we modified.
 
-The test .ipynb .list .xmodel files are available on GitHub.
+The test .ipynb .xmodel files are available on GitHub.
 
 [/jupyter_notebooks/pynq-dpu](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/pynq-dpu)
 
