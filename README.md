@@ -81,4 +81,77 @@ The test .ipynb .xmodel files are available on GitHub.
 
 
 
+### 4. Implementation DPU, GPIO, and PWM
+For details and specifications, please refer to the hackster.io Subproject below.
 
+[Implementation DPU, GPIO, and PWM for KR260](https://www.hackster.io/iotengineer22/implementation-dpu-gpio-and-pwm-for-kr260-f7637b)
+
+In this Subproject, Using Vivado and Vitis, we created a project to synthesize the DPU IP.
+
+We utilized the DPU created on PYNQ with KR260 to perform object detection using Vitis AI (Yolo).
+
+The test .bit .hwh .xclbin .ipynb .xmodel files are available on GitHub.
+
+[/jupyter_notebooks/pynq-original-dpu-model](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/pynq-original-dpu-model)
+
+
+### 5. Remote Control 360° Camera
+For details and specifications, please refer to the hackster.io Subproject below.
+
+[Remote Control 360° Camera from KR260](https://www.hackster.io/iotengineer22/remote-control-360-camera-from-kr260-f0ead0)
+
+In this Subproject, we tried controlling the RICOH THETA V 360° camera from the KR260 using PYNQ.
+
+The test .ipynb files are available on GitHub.
+
+[/jupyter_notebooks/theta-check](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/theta-check)
+
+
+### 6. GStreamer + OpenCV with 360°Camera
+For details and specifications, please refer to the hackster.io Subproject below.
+
+[GStreamer + OpenCV with 360° Camera and KR260](https://www.hackster.io/iotengineer22/gstreamer-opencv-with-360-camera-and-kr260-308442)
+
+In this Subproject, we'll walk you through how we achieved real-time image processing using a KR260 and a 360° camera (RICOH THETA).
+
+The test .py files are available on GitHub.
+
+[/src/gst-test](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/gst-test)
+
+
+### 7. 360 Live Streaming + Object Detect(DPU)
+For details and specifications, please refer to the hackster.io Subproject below.
+
+[360 Live Streaming + Object Detect(DPU) with KR260](https://www.hackster.io/iotengineer22/360-live-streaming-object-detect-dpu-with-kr260-69dced)
+
+In this Subproject, we conducted real-time object detection on 360 live streaming image data.
+
+The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
+
+[/src/gst-dpu-test](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/gst-dpu-test)
+
+
+### 8. ROS2 3D Marker from 360 Live Streaming
+For details and specifications, please refer to the hackster.io Subproject below.
+
+[ROS2 3D Marker from 360 Live Streaming with KR260](https://www.hackster.io/iotengineer22/ros2-3d-marker-from-360-live-streaming-with-kr260-a8c51c)
+
+In this Subproject, we experimented with processing 360° camera images and markers using ROS2 Rviz2.
+
+The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
+
+[/src/gst-ros2](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/gst-ros2)
+
+
+### 9. Control 360° Object Detection Robot Car
+For details and specifications, please refer to the hackster.io Subproject below.
+
+[Control 360° Object Detection Robot Car with KR260](https://www.hackster.io/iotengineer22/control-360-object-detection-robot-car-with-kr260-95a07e)
+
+In this Subproject, we control 360° Object Detection Robot Car with KR260.
+
+The object detection is performed using DPU, and marker output is executed with ROS2 while the Robot Car is in motion.
+
+The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
+
+[/src/gst-ros2](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/gst-ros2)
