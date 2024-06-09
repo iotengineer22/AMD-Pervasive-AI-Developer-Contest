@@ -1,7 +1,7 @@
-# AMD-Pervasive-AI-Developer-Contest
+# AMD Pervasive AI Developer Contest
 This repository present solution for the AMD Pervasive AI Developer Contest.[AMD Pervasive AI Developer Contest](https://www.hackster.io/contests/amd2023).
 
-![ROS2 Marker Output](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/imgs/ros2-marker.gif)
+![ROS2 Marker Output](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/ros2-marker.gif)
 
 ## Introduction
 First of all thank you to AMD and hackster.io for hosting this exciting competition.
@@ -14,7 +14,7 @@ A key feature is the incorporation of a **360° Camera**.
 
 By leveraging the KR260, we've developed a robot with 360-degree AI vision.
 
-![overview](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/imgs/overview.png)
+![overview](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/overview.png)
 
 ## Structure
     .
@@ -33,5 +33,6 @@ The PL also handles PWM and GPIO for driving the Robot Car and Arm.
 
 By integrating PL and PS, the robot achieves 360-degree AI vision.
 
-![Using KR260 and PYNQ](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/imgs/Using-KR260-and-PYNQ.png)
+![Using KR260 and PYNQ](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/Using-KR260-and-PYNQ.png)
+
 
