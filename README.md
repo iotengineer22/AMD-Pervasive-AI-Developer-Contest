@@ -64,6 +64,7 @@ The test .bit .hwh .ipynb files are available on GitHub.
 
 [/jupyter_notebooks/pynq-pwm](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/pynq-pwm)
 
+![kr260-pwm](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-pwm.png)
 
 
 ### 3. Object Detection(Yolo) with DPU-PYNQ
@@ -79,6 +80,7 @@ The test .ipynb .xmodel files are available on GitHub.
 
 [/jupyter_notebooks/pynq-dpu](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/pynq-dpu)
 
+![kr260-dpu](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-dpu.png)
 
 
 ### 4. Implementation DPU, GPIO, and PWM
@@ -94,6 +96,8 @@ The test .bit .hwh .xclbin .ipynb .xmodel files are available on GitHub.
 
 [/jupyter_notebooks/pynq-original-dpu-model](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/pynq-original-dpu-model)
 
+![kr260-my-dpu](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-my-dpu.png)
+
 
 ### 5. Remote Control 360° Camera
 For details and specifications, please refer to the hackster.io Subproject below.
@@ -105,6 +109,8 @@ In this Subproject, we tried controlling the RICOH THETA V 360° camera from the
 The test .ipynb files are available on GitHub.
 
 [/jupyter_notebooks/theta-check](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/theta-check)
+
+![kr260-theta](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-theta.png)
 
 
 ### 6. GStreamer + OpenCV with 360°Camera
@@ -118,6 +124,8 @@ The test .py files are available on GitHub.
 
 [/src/gst-test](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/gst-test)
 
+![kr260-gst](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-gst.png)
+
 
 ### 7. 360 Live Streaming + Object Detect(DPU)
 For details and specifications, please refer to the hackster.io Subproject below.
@@ -130,6 +138,8 @@ The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
 
 [/src/gst-dpu-test](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/gst-dpu-test)
 
+![kr260-gst-dpu](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-gst-dpu.png)
+
 
 ### 8. ROS2 3D Marker from 360 Live Streaming
 For details and specifications, please refer to the hackster.io Subproject below.
@@ -141,6 +151,8 @@ In this Subproject, we experimented with processing 360° camera images and mark
 The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
 
 [/src/gst-ros2](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/gst-ros2)
+
+![kr260-gst-ros2](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-gst-ros2.png)
 
 
 ### 9. Control 360° Object Detection Robot Car
@@ -155,3 +167,6 @@ The object detection is performed using DPU, and marker output is executed with 
 The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
 
 [/src/gst-ros2](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/gst-ros2)
+
+![kr260-run-robot](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-run-robot.png)
+
