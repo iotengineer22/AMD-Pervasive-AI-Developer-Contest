@@ -1,10 +1,14 @@
 # AMD Pervasive AI Developer Contest
-This repository present solution for the AMD Pervasive AI Developer Contest [AMD Pervasive AI Developer Contest](https://www.hackster.io/contests/amd2023).
+This repository present solution for the AMD Pervasive AI Developer Contest 
+
+[AMD Pervasive AI Developer Contest](https://www.hackster.io/contests/amd2023).
 
 ## Introduction
 First of all thank you to AMD and hackster.io for hosting this exciting competition.
 
-The main project is primarily summarized on hackster.io, so please refer to it there **<< under submission**.
+The main project is primarily summarized on hackster.io, so please refer to it there 
+
+**<< under submission**.
 
 This project integrates advanced technologies like Object Detection, DPU, PYNQ, and ROS2 with KR260.
 
