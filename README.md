@@ -8,7 +8,7 @@ First of all thank you to AMD and hackster.io for hosting this exciting competit
 
 The main project is primarily summarized on hackster.io, so please refer to it there 
 
-**<< under submission**.
+**<< under submission >>**.
 
 This project integrates advanced technologies like Object Detection, DPU, PYNQ, and ROS2 with KR260.
 
@@ -34,6 +34,8 @@ The PL also handles PWM and GPIO for driving the Robot Car and Arm.
 By integrating PL and PS, the robot achieves 360-degree AI vision.
 
 ![Using KR260 and PYNQ](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/Using-KR260-and-PYNQ.png)
+
+## Electrical Diagram overview
 
 This is Main electrical diagram.
 
