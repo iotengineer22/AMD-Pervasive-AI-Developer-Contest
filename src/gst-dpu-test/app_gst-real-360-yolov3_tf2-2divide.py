@@ -3,7 +3,7 @@
 
 
 print(" ")
-print("360-auto-detect-robot-car-test")
+print("gst-360-yolov3_test, in TensorFlow2")
 print(" ")
 
 # ***********************************************************************
@@ -15,8 +15,6 @@ import numpy as np
 import cv2
 import random
 import colorsys
-import threading
-
 from matplotlib.patches import Rectangle
 from matplotlib import pyplot as plt
 
@@ -28,7 +26,7 @@ cnn_xmodel  = os.path.join("./"        , "kr260_yolov3_tf2.xmodel")
 labels_file = os.path.join("./img"     , "coco2017_classes.txt")
 
 # ***********************************************************************
-# Utility Functions (DPU)
+# Utility Functions
 # ***********************************************************************
 anchor_list = [10,13,16,30,33,23,30,61,62,45,59,119,116,90,156,198,373,326]
 anchor_float = [float(x) for x in anchor_list]
@@ -314,203 +312,7 @@ output_data = [np.empty(shapeOut0, dtype=np.float32, order="C"),
 image = input_data[0]
 
 
-     
 
-# ***********************************************************************
-# Utility Functions (PWM)
-# ***********************************************************************
-# PWM_set
-# utility functions for bit manipulation
-def set_bit(value, bit):
-    return value | (1 << bit)
-
-def clear_bit(value, bit):
-    return value & ~(1 << bit)
-
-def get_bit(value, bit):
-    return (value >> bit) & 1
-
-motor_B2 = ol.axi_timer_0
-motor_B1 = ol.axi_timer_1
-motor_A2 = ol.axi_timer_2
-motor_A1 = ol.axi_timer_3
-
-# extract register addresses (will be the same for every Axi Timer)
-TCSR0 = ol.ip_dict['axi_timer_0']['registers']['TCSR0']
-TCSR1 = ol.ip_dict['axi_timer_0']['registers']['TCSR1']
-TCSR0_address = TCSR0['address_offset']
-TCSR1_address = TCSR1['address_offset']
-TCSR0_register = TCSR0['fields'] # bit_offset for address
-TCSR1_register = TCSR1['fields']
-TLR0 = ol.ip_dict['axi_timer_0']['registers']['TLR0']
-TLR1 = ol.ip_dict['axi_timer_0']['registers']['TLR1']
-TLR0_address = TLR0['address_offset']
-TLR1_address = TLR1['address_offset']
-
-# create the configuration values for the control register
-temp_val_0 = 0
-temp_val_1 = 0
-
-# The PWMA0 bit in TCSR0 and PWMB0 bit in TCSR1 must be set to 1 to enable PWM mode.
-temp_val_0 = set_bit(temp_val_0, TCSR0_register['PWMA0']['bit_offset'])
-temp_val_1 = set_bit(temp_val_1, TCSR1_register['PWMA1']['bit_offset'])
-
-# The GenerateOut signals must be enabled in the TCSR (bit GENT set to 1). The PWM0
-# signal is generated from the GenerateOut signals of Timer 0 and Timer 1, so these
-# signals must be enabled in both timer/counters
-temp_val_0 = set_bit(temp_val_0, TCSR0_register['GENT0']['bit_offset'])
-temp_val_1 = set_bit(temp_val_1, TCSR1_register['GENT1']['bit_offset'])
-
-# The counter can be set to count up or down. UDT
-temp_val_0 = set_bit(temp_val_0, TCSR0_register['UDT0']['bit_offset'])
-temp_val_1 = set_bit(temp_val_1, TCSR1_register['UDT1']['bit_offset'])
-
-# set Autoreload (ARHT0 = 1)
-temp_val_0 = set_bit(temp_val_0, TCSR0_register['ARHT0']['bit_offset'])
-temp_val_1 = set_bit(temp_val_1, TCSR1_register['ARHT1']['bit_offset'])
-
-# enable timer (ENT0 = 1)
-temp_val_0 = set_bit(temp_val_0, TCSR0_register['ENT0']['bit_offset'])
-temp_val_1 = set_bit(temp_val_1, TCSR1_register['ENT1']['bit_offset'])
-
-# here you must see "0b1010010110" twice
-print(bin(temp_val_0))
-print(bin(temp_val_1))
-
-
-# PWM_A_motor_set
-
-def set_motor_A_pwm(duty_cycle, direction):
-    _period_ = 20000  # 50Hz, 20ms
-    _pulse_ = duty_cycle  # 0-100
-    period = int((_period_ & 0x0ffff) * 100)
-    pulse = int((_pulse_ & 0x07f) * period / 100)
-
-    print(f"period 20ms: {period}")
-    print(f"pulse {duty_cycle}%: {pulse}")
-    print(f"direction: {direction}")
-
-    motor_A1.write(TCSR0['address_offset'], temp_val_0)
-    motor_A1.write(TCSR1['address_offset'], temp_val_1)
-    motor_A1.write(TLR0['address_offset'], period)
-
-    motor_A2.write(TCSR0['address_offset'], temp_val_0)
-    motor_A2.write(TCSR1['address_offset'], temp_val_1)
-    motor_A2.write(TLR0['address_offset'], period)
-
-    # direction
-    if direction == 'forward':
-        motor_A1.write(TLR1['address_offset'], pulse)
-        motor_A2.write(TLR1['address_offset'], 0)
-    elif direction == 'reverse':
-        motor_A1.write(TLR1['address_offset'], 0)
-        motor_A2.write(TLR1['address_offset'], pulse)
-    elif direction == 'coast':
-        motor_A1.write(TLR1['address_offset'], 0)
-        motor_A2.write(TLR1['address_offset'], 0)
-    elif direction == 'break':
-        motor_A1.write(TLR1['address_offset'], 100)
-        motor_A2.write(TLR1['address_offset'], 100)   
-    else:
-        print("Invalid direction. Please use 'forward' or 'reverse'or 'coast' or 'break'.")
-
-
-# PWM_B_motor_set
-
-def set_motor_B_pwm(duty_cycle, direction):
-    _period_ = 20000  # 50Hz, 20ms
-    _pulse_ = duty_cycle  # 0-100
-    period = int((_period_ & 0x0ffff) * 100)
-    pulse = int((_pulse_ & 0x07f) * period / 100)
-
-    print(f"period 20ms: {period}")
-    print(f"pulse {duty_cycle}%: {pulse}")
-    print(f"direction: {direction}")
-
-    motor_B1.write(TCSR0['address_offset'], temp_val_0)
-    motor_B1.write(TCSR1['address_offset'], temp_val_1)
-    motor_B1.write(TLR0['address_offset'], period)
-
-    motor_B2.write(TCSR0['address_offset'], temp_val_0)
-    motor_B2.write(TCSR1['address_offset'], temp_val_1)
-    motor_B2.write(TLR0['address_offset'], period)
-
-    # direction
-    if direction == 'forward':
-        motor_B1.write(TLR1['address_offset'], pulse)
-        motor_B2.write(TLR1['address_offset'], 0)
-    elif direction == 'reverse':
-        motor_B1.write(TLR1['address_offset'], 0)
-        motor_B2.write(TLR1['address_offset'], pulse)
-    elif direction == 'coast':
-        motor_B1.write(TLR1['address_offset'], 0)
-        motor_B2.write(TLR1['address_offset'], 0)
-    elif direction == 'break':
-        motor_B1.write(TLR1['address_offset'], 100)
-        motor_B2.write(TLR1['address_offset'], 100)   
-    else:
-        print("Invalid direction. Please use 'forward' or 'reverse'or 'coast' or 'break'.")
-
-def car_rotation(pulse, move_time):
-    set_motor_B_pwm(pulse, 'forward')
-    set_motor_A_pwm(pulse, 'reverse')
-    time.sleep(move_time)
-    set_motor_A_pwm(0, 'coast')
-    set_motor_B_pwm(0, 'coast')
-
-def arm_up_down(move_time):
-    gpio_out.write(0x23,mask) #arm_forward
-    time.sleep(move_time)
-    gpio_out.write(0x43,mask) #arm_reverse
-    time.sleep(move_time)
-    gpio_out.write(0x03,mask) #arm_free
-
-# Dictionary to hold detection timers for each section
-detection_timers = {1: None, 2: None, 3: None, 4: None}
-# Flags to track if the action has been triggered for each section
-action_triggered = {1: False, 2: False, 3: False, 4: False}
-
-rotation_90_time = 1
-arm_move_time = 2
-rotation_pulse = 50
-detect_time = 2
-
-def start_timer(section):
-    if detection_timers[section] is None:
-        detection_timers[section] = time.time()
-
-def reset_timers(section):
-    if section in detection_timers:
-        detection_timers[section] = None
-        action_triggered[section] = False  # Reset the action trigger for the specific section
-
-def check_timers_and_trigger_actions():
-    for section, start_time in detection_timers.items():
-        if start_time and (time.time() - start_time) >= detect_time:
-            print("time: {}".format(time.time() - start_time)) 
-            if not action_triggered[section]:
-                execute_action_A(section)
-                action_triggered[section] = True
-
-def execute_action_A(section):
-
-    print(f"Action A triggered for section {section}")
-    if section == 1:  #front
-        arm_up_down(arm_move_time)
-        # arm_thread = threading.Thread(target=arm_up_down, args=(arm_move_time,))
-        # arm_thread.start()
-    elif section == 2:  #right
-        car_rotation(rotation_pulse, rotation_90_time)    #90° rotation
-        # rotation_thread = threading.Thread(target=car_rotation, args=(rotation_pulse, rotation_90_time))
-        # rotation_thread.start()
-    elif section == 3:  #back
-        car_rotation(rotation_pulse, 2*rotation_90_time)    #180° rotation
-        # rotation_thread = threading.Thread(target=car_rotation, args=(rotation_pulse, 2*rotation_90_time))
-        # rotation_thread.start()
-    elif section == 4:  #left
-        car_rotation(rotation_pulse, 3*rotation_90_time)    #270° rotation
-        # rotation_thread = threading.Thread(target=car_rotation, args=(rotation_pulse, 3*rotation_90_time))
-        # rotation_thread.start()
 
 def run(input_image, section_i, display=False):
     # Read input image
@@ -518,7 +320,7 @@ def run(input_image, section_i, display=False):
     #input_image = cv2.imread(image_index)
 
     # Pre-processing
-    print(input_image.shape)
+    # print(input_image.shape)
     image_size = input_image.shape[:2]
     image_data = np.array(pre_process(input_image, (416, 416)), dtype=np.float32)
     
@@ -539,46 +341,24 @@ def run(input_image, section_i, display=False):
     if display:
         _ = draw_boxes(input_image, boxes, scores, classes)
 
-
-    print("section: {}".format(section_i))
-    print("Number of detected objects: {}".format(len(boxes)))
-    print("Scores: {}".format(scores))
-    print("Details of detected objects: {}".format(classes))
-    print(" ")
+    # print("Number of detected objects: {}".format(len(boxes)))
+    # print("Scores: {}".format(scores))
+    # print("Details of detected objects: {}".format(classes))
+    # print(" ")
     
-    detect_target = 0 # Human(0), Sports ball(32)
-    print("detect_target: {}".format(detect_target))
-    print("detection_timers: {}".format(detection_timers))
-    print("action_triggered: {}".format(action_triggered))
-
-    # if detect_target not in classes or (detect_target in classes and section_i is not None):
-    if detect_target not in classes:
-        reset_timers(section_i)
-
- 
-    if detect_target in classes:
+    # Sports ball(32)-Led(GPIO)
+    if 32 in classes:
         if section_i == 1:  #front
-            if not all(action_triggered.values()):
-                gpio_out.write(0x1F,mask) #All_led_on
-            start_timer(section_i)
+            gpio_out.write(0x1C,mask) #All_led_on
         elif section_i == 2:  #right
-            if not all(action_triggered.values()):
-                gpio_out.write(0x13,mask) #Red_led_on
-            start_timer(section_i)
+            gpio_out.write(0x10,mask) #Red_led_on
         elif section_i == 3:  #back
-            if not all(action_triggered.values()):
-                gpio_out.write(0x0B,mask) #Green_led_on
-            start_timer(section_i)
+            gpio_out.write(0x09,mask) #Green_led_on
         elif section_i == 4:  #left
-            if not all(action_triggered.values()):
-                gpio_out.write(0x07,mask) #Blue_led_on
-            start_timer(section_i)
-        
-        # check_timers_and_trigger_actions()  
-    # else:
-    #     reset_timers()
+            gpio_out.write(0x04,mask) #Blue_led_on        
+    #else:
+        #gpio_out.write(0x0,mask) #All_led_off
 
-    check_timers_and_trigger_actions()       
 
 
 # Definition of the GStreamer pipeline (software)
@@ -599,12 +379,11 @@ display=True
 gpio_0_ip = ol.ip_dict['axi_gpio_0']
 gpio_out = AxiGPIO(gpio_0_ip).channel1
 mask = 0xffffffff
-gpio_out.write(0x03,mask) #2*motor_driver_enable
 
 # Dummy image
 if display:
     empty_image = 255 * np.ones((480, 480, 3), dtype=np.uint8)
-    for i in range(4):
+    for i in range(2):
         cv2.imshow(f"Section {i+1}", empty_image)
     cv2.waitKey(15000) #15s wait
 
@@ -613,19 +392,18 @@ while True:
     if not ret:
         break
 
+    start_time = time.time()
     # Get the height and width of the image
     height, width, _ = frame.shape
 
-    # Shift the image to the right by 240 pixels (to center the front in Section 1)
-    shift = width // 8
+    # Shift the image to the right by 480 pixels (to center the front in Section 1)
+    shift = width // 4
     frame_shifted = np.roll(frame, shift, axis=1)
 
-    # Split the shifted image into 4 sections 480:480
+    # Split the image into 2 sections 960:960
     sections = [
-        frame_shifted[360:840, :width // 4],
-        frame_shifted[360:840, width // 4:width // 2],
-        frame_shifted[360:840, width // 2:3 * width // 4],
-        frame_shifted[360:840, 3 * width // 4:]
+        frame_shifted[:, :width // 2],                  #front
+        frame_shifted[:, width // 2:]                  #back
     ]
 
     # Display each section   
@@ -639,8 +417,11 @@ while True:
         gpio_out.write(0x00,mask) #All_GPIO_off
         break
     
-    # gpio_out.write(0x00,mask) #All_GPIO_off
-
+    gpio_out.write(0x00,mask) #All_GPIO_off
+    end_time = time.time()
+    print("Total run time: {:.4f} seconds".format(end_time - start_time))
+    print("Performance: {} FPS".format(1/(end_time - start_time)))
+    print(" ")
 
 
 cap.release()
