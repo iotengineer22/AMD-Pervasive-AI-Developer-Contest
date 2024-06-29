@@ -47,6 +47,7 @@ auto_move_flag = False
 # ***********************************************************************
 # input file names
 # ***********************************************************************
+dpu_model   = os.path.abspath("dpu.bit")
 cnn_xmodel  = os.path.join("./"        , "kr260_yolov3_tf2.xmodel")
 labels_file = os.path.join("./img"     , "coco2017_classes.txt")
 
@@ -57,7 +58,7 @@ from pynq_dpu import DpuOverlay
 from pynq import Overlay
 from pynq.lib import AxiGPIO
 
-overlay = DpuOverlay("/home/ubuntu/gst-ros2/dpu.bit")
+overlay = DpuOverlay(dpu_model)
 overlay.load_model(cnn_xmodel)
 ol = overlay
 
@@ -600,13 +601,13 @@ inputTensors = dpu.get_input_tensors()
 outputTensors = dpu.get_output_tensors()
 shapeIn = tuple(inputTensors[0].dims)
 
-shapeOut0 = (tuple(outputTensors[0].dims)) # (1, 13, 13, 75)
-shapeOut1 = (tuple(outputTensors[1].dims)) # (1, 26, 26, 75)
-shapeOut2 = (tuple(outputTensors[2].dims)) # (1, 52, 52, 75)
+shapeOut0 = (tuple(outputTensors[0].dims)) # (1, 13, 13, 255)
+shapeOut1 = (tuple(outputTensors[1].dims)) # (1, 26, 26, 255)
+shapeOut2 = (tuple(outputTensors[2].dims)) # (1, 52, 52, 255)
 
-outputSize0 = int(outputTensors[0].get_data_size() / shapeIn[0]) # 12675
-outputSize1 = int(outputTensors[1].get_data_size() / shapeIn[0]) # 50700
-outputSize2 = int(outputTensors[2].get_data_size() / shapeIn[0]) # 202800
+outputSize0 = int(outputTensors[0].get_data_size() / shapeIn[0]) # 43095
+outputSize1 = int(outputTensors[1].get_data_size() / shapeIn[0]) # 172380
+outputSize2 = int(outputTensors[2].get_data_size() / shapeIn[0]) # 689520
 
 input_data = [np.empty(shapeIn, dtype=np.float32, order="C")]
 output_data = [np.empty(shapeOut0, dtype=np.float32, order="C"), 
