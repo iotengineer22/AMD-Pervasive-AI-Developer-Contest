@@ -303,13 +303,13 @@ shapeIn = tuple(inputTensors[0].dims)
 print(" ")
 print(shapeIn)
 print(" ")
-shapeOut0 = (tuple(outputTensors[0].dims)) # (1, 13, 13, 75)
-shapeOut1 = (tuple(outputTensors[1].dims)) # (1, 26, 26, 75)
-shapeOut2 = (tuple(outputTensors[2].dims)) # (1, 52, 52, 75)
+shapeOut0 = (tuple(outputTensors[0].dims)) # (1, 52, 52, 85)
+shapeOut1 = (tuple(outputTensors[1].dims)) # (1, 26, 26, 85)
+shapeOut2 = (tuple(outputTensors[2].dims)) # (1, 13, 13, 85)
 
-outputSize0 = int(outputTensors[0].get_data_size() / shapeIn[0]) # 12675
-outputSize1 = int(outputTensors[1].get_data_size() / shapeIn[0]) # 50700
-outputSize2 = int(outputTensors[2].get_data_size() / shapeIn[0]) # 202800
+outputSize0 = int(outputTensors[0].get_data_size() / shapeIn[0]) # 229840
+outputSize1 = int(outputTensors[1].get_data_size() / shapeIn[0]) # 57460
+outputSize2 = int(outputTensors[2].get_data_size() / shapeIn[0]) # 14365
 
 input_data = [np.empty(shapeIn, dtype=np.float32, order="C")]
 output_data = [np.empty(shapeOut0, dtype=np.float32, order="C"), 
