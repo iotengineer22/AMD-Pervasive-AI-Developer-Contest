@@ -387,6 +387,10 @@ if display:
         cv2.imshow(f"Section {i+1}", empty_image)
     cv2.waitKey(15000) #15s wait
 
+# Initialize variables for Avg_FPS calculation
+frame_count = 0
+avg_start_time = time.time()
+
 while True:
     ret, frame = cap.read()
     if not ret:
@@ -423,7 +427,21 @@ while True:
     print("Performance: {} FPS".format(1/(end_time - start_time)))
     print(" ")
 
+    # Update frame count
+    frame_count += 1
 
+    # Check the time every 100 frames
+    if frame_count % 100 == 0:
+        avg_end_time = time.time()
+        elapsed_time = avg_end_time - avg_start_time
+        fps = frame_count / elapsed_time
+        print(" ")
+        print("Avg_FPS:", fps)
+        print(" ")
+        # Reset the timer and frame count
+        frame_count = 0
+        avg_start_time = time.time()
+        
 cap.release()
 cv2.destroyAllWindows()
 
