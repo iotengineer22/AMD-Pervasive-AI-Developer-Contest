@@ -200,3 +200,20 @@ The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
 [/src/yolox-test](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/yolox-test)
 
 ![kr260-yolox](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-yolox.png)
+
+
+### 11. Benchmark Architectures of the DPU
+For details and specifications, please refer to the hackster.io Subproject below.
+
+[Benchmark Architectures of the DPU](https://www.hackster.io/iotengineer22/benchmark-architectures-of-the-dpu-with-kr260-699f19)
+
+In this Subproject, We compared the speeds of different DPU architectures.
+
+We conducted object detection using the KR260's DPU, and used the lightweight model "YOLOX-nano" with PyTorch.
+
+The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
+
+[/jupyter_notebooks/pynq-benchmark](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/pynq-benchmark)
+
+![kr260-DPU-inference](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-DPU-inference.png)
+
