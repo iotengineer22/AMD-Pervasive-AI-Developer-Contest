@@ -183,3 +183,20 @@ The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
 
 ![kr260-run-robot](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-run-robot.png)
 
+
+### 10. Improve Object Detection Speed with YOLOX
+For details and specifications, please refer to the hackster.io Subproject below.
+
+[Improve Object Detection Speed with YOLOX](https://www.hackster.io/iotengineer22/object-detection-with-yolox-pynq-and-kr260-13d32f)
+
+In this Subproject, We conduct 360° Object Detection with YOLOX.
+
+We conducted object detection using the KR260's DPU, and used the lightweight model "YOLOX-nano" with PyTorch.
+
+The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
+
+[/jupyter_notebooks/pynq-yolox](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/jupyter_notebooks/pynq-yolox)
+
+[/src/yolox-test](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/yolox-test)
+
+![kr260-yolox](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-yolox.png)
