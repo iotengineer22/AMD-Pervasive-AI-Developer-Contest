@@ -217,3 +217,14 @@ The test .bit .hwh .xclbin .py .xmodel  files are available on GitHub.
 
 ![kr260-DPU-inference](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-DPU-inference.png)
 
+
+### 12. Power Consumption of 360° Object Detection Robot Car
+For details and specifications, please refer to the hackster.io Subproject below.
+
+[Power Consumption of 360° Object Detection Robot Car](https://www.hackster.io/iotengineer22/power-consumption-of-robot-car-with-kr260-8c9fbc)
+
+In this Subproject, We measured Power Consumption of Robot Car with KR260.
+
+When trying to power the KR260 from a mobile battery, a power shortage occurred during the program startup.
+
+![kr260-power](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-power.png)
