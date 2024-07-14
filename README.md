@@ -225,6 +225,22 @@ For details and specifications, please refer to the hackster.io Subproject below
 
 In this Subproject, We measured Power Consumption of Robot Car with KR260.
 
-When trying to power the KR260 from a mobile battery, a power shortage occurred during the program startup.
+When trying to power the KR260 from a mobile battery(20W), a power shortage occurred during the program startup.
 
 ![kr260-power](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-power.png)
+
+
+### 13. Application to Vitis AI ONNX Runtime Engine (VOE)
+For details and specifications, please refer to the hackster.io Subproject below.
+
+[Application to Vitis AI ONNX Runtime Engine (VOE)](https://www.hackster.io/iotengineer22/vitis-ai-onnx-runtime-engine-voe-with-kr260-python-0d02c3)
+
+In this Subproject, We introduce Vitis AI ONNX Runtime Engine (VOE) with KR260.
+
+We built an ONNX environment on the KR260 and executed ONNX Runtime.
+
+*In this subproject, we will conduct tests in a different environment from the main project as part of the benchmarking process.
+
+[/src/onnx-test](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/onnx-test)
+
+![kr260-onnx](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-onnx.png)
