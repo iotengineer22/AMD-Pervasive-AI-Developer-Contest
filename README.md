@@ -41,6 +41,13 @@ This is Main electrical diagram.
 
 ![Main-electrical-diagram](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/Main-electrical-diagram.png)
 
+These are PMOD diagrams.
+
+![PMOD1-diagram](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/PMOD1-diagram.png)
+
+![PMOD2-diagram](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/PMOD2-diagram.png)
+
+![PMOD4-diagram](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/PMOD4-diagram.png)
 
 ### 1. PYNQ + GPIO(LED Blinking)
 For details and specifications, please refer to the hackster.io Subproject below.
