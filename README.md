@@ -239,7 +239,7 @@ In this Subproject, We introduce Vitis AI ONNX Runtime Engine (VOE) with KR260.
 
 We built an ONNX environment on the KR260 and executed ONNX Runtime.
 
-*In this subproject, we will conduct tests in a different environment from the main project as part of the benchmarking process.
+**In this subproject, we will conduct tests in a different environment from the main project as part of the benchmarking process.**
 
 [/src/onnx-test](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/onnx-test)
 
