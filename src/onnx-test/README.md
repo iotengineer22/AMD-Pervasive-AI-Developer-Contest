@@ -17,3 +17,8 @@ unzip openDownload\?filename\=pt_yolox-nano_3.5.zip
 ```
 
 
+## Model File Download(yolox_nano.onnx)
+
+The Model file can be downloaded from YOLOX:
+This time, we used the models provided by YOLOX. 
+https://yolox.readthedocs.io/en/latest/demo/onnx_readme.html
