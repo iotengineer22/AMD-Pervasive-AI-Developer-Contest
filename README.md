@@ -259,4 +259,4 @@ Many people may not have the 360° camera required for Main project.
 
 [/src/usb-camera](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/usb-camera)
 
-![kr260-onnx](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-onnx.png)
+![kr260-onnx](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-webcam.png)
