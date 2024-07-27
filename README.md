@@ -4,7 +4,7 @@ This repository present solution for the AMD Pervasive AI Developer Contest
 [AMD Pervasive AI Developer Contest](https://www.hackster.io/contests/amd2023).
 
 ## Introduction
-First of all thank you to AMD and hackster.io for hosting this exciting competition.
+**First of all thank you to AMD and hackster.io for hosting this exciting competition.**
 
 The main project is primarily summarized on hackster.io, so please refer to it there 
 
@@ -242,5 +242,21 @@ We built an ONNX environment on the KR260 and executed ONNX Runtime.
 **In this subproject, we will conduct tests in a different environment from the main project as part of the benchmarking process.**
 
 [/src/onnx-test](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/onnx-test)
+
+![kr260-onnx](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-onnx.png)
+
+
+### 14. Appendix: Object Detection Using YOLOX with a Webcam
+For details and specifications, please refer to the hackster.io Subproject below.
+
+[Object Detection Using YOLOX with a Webcam](https://www.hackster.io/iotengineer22/object-detection-with-kr260-from-a-webcam-85c261)
+
+In this Subproject, We tried object detection with a regular USB-connected webcam using the KR260.
+
+Many people may not have the 360° camera required for Main project.
+
+**Therefore, as a reference, we will introduce a subproject using a generic webcam**, as well as controlling DPU, GPIO and Output ROS2.
+
+[/src/usb-camera](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/tree/main/src/usb-camera)
 
 ![kr260-onnx](https://github.com/iotengineer22/AMD-Pervasive-AI-Developer-Contest/blob/main/imgs/kr260-onnx.png)
