@@ -8,7 +8,7 @@ This repository present solution for the AMD Pervasive AI Developer Contest
 
 The main project is primarily summarized on hackster.io, so please refer to it there 
 
-**<< under submission >>**.
+[360° Object Detection Robot Car](https://www.hackster.io/iotengineer22/360-object-detection-robot-car-bdb1bd)
 
 This project integrates advanced technologies like Object Detection, DPU, PYNQ, and ROS2 with KR260.
 
